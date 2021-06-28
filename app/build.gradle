@@ -162,7 +162,7 @@ dependencies {
     // mock server for backend
     androidTestImplementation 'com.squareup.okhttp3:mockwebserver:4.3.0'
     // Optional -- Hamcrest library
-    androidTestImplementation 'org.hamcrest:hamcrest-library:1.3'
+    androidTestImplementation 'org.hamcrest:hamcrest-library:2.2'
     androidTestImplementation 'org.hamcrest:hamcrest-integration:1.3'
 
     androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
