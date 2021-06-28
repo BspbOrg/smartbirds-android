@@ -18,6 +18,7 @@
         <attr name="switchFormInputStyle" format="reference" />
         <attr name="zoneFormInputStyle" format="reference" />
         <attr name="singleChoiceRadioFormInputStyle" format="reference" />
+        <attr name="quickChoiceInputStyle" format="reference" />
     </declare-styleable>
 
     <declare-styleable name="SupportRequiredView">
@@ -63,5 +64,10 @@
     <!-- Stylable attributes for SingleChoiceConfigFormInput-->
     <declare-styleable name="SingleChoiceConfigFormInput">
         <attr name="config_entries" />
+    </declare-styleable>
+
+    <declare-styleable name="QuickChoiceFormInput">
+        <attr name="entriesType" />
+        <attr name="hint" />
     </declare-styleable>
 </resources>

@@ -46,16 +46,16 @@
     </style>
 
     <style name="FieldLabel">
-        <item name="android:paddingLeft">15dp</item>
-        <item name="android:paddingRight">15dp</item>
-        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingLeft">@dimen/field_padding_left</item>
+        <item name="android:paddingRight">@dimen/field_padding_right</item>
+        <item name="android:paddingBottom">@dimen/field_padding_bottom</item>
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
     </style>
 
     <style name="FieldInput.Text" parent="Widget.AppCompat.EditText">
         <item name="android:imeOptions">flagNoExtractUi</item>
-        <item name="android:paddingLeft">15dp</item>
-        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingLeft">@dimen/field_padding_left</item>
+        <item name="android:paddingRight">@dimen/field_padding_right</item>
         <item name="android:inputType">text</item>
     </style>
 
@@ -94,9 +94,9 @@
     </style>
 
     <style name="FieldInput.SemiSpinner" parent="Widget.AppCompat.Spinner">
-        <item name="android:paddingLeft">15dp</item>
-        <item name="android:paddingRight">15dp</item>
-        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingLeft">@dimen/field_padding_left</item>
+        <item name="android:paddingRight">@dimen/field_padding_right</item>
+        <item name="android:paddingBottom">@dimen/field_padding_bottom</item>
         <item name="android:clickable">true</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>

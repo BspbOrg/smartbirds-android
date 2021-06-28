@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/quick_choice_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/field_padding_left"
+        android:paddingRight="@dimen/field_padding_right"
+        android:paddingBottom="@dimen/field_padding_bottom"
+        android:textAppearance="?android:textAppearanceMedium"
+        tools:hint="@string/monitoring_cbm_name" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/quick_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
+            android:layout_weight="1"
+            android:text="@string/quick_choice_button_empty"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/quick_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_weight="1"
+            android:text="@string/quick_choice_button_empty"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <View style="@style/FieldSeparator" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/quick_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
+            android:layout_weight="1"
+            android:text="@string/quick_choice_button_empty"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/quick_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_weight="1"
+            android:text="@string/quick_choice_button_empty"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <View style="@style/FieldSeparator" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/quick_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
+            android:layout_weight="1"
+            android:text="@string/quick_choice_button_empty"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/quick_6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_weight="1"
+            android:text="@string/quick_choice_button_empty"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+
+</LinearLayout>

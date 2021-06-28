@@ -18,20 +18,25 @@ fun debugLog(message: String?) {
 }
 
 fun Context.showAlert(
-        title: Int,
-        message: Int,
-        positiveButtonClickListener: DialogInterface.OnClickListener?,
-        negativeButtonClickListener: DialogInterface.OnClickListener?,
+    title: Int,
+    message: Int,
+    positiveButtonClickListener: DialogInterface.OnClickListener? = null,
+    negativeButtonClickListener: DialogInterface.OnClickListener? = null,
 ) {
-    showAlert(getString(title), getString(message), positiveButtonClickListener, negativeButtonClickListener)
+    showAlert(
+        getString(title),
+        getString(message),
+        positiveButtonClickListener,
+        negativeButtonClickListener
+    )
 }
 
 
 fun Context.showAlert(
-        title: CharSequence,
-        message: CharSequence,
-        positiveButtonClickListener: DialogInterface.OnClickListener?,
-        negativeButtonClickListener: DialogInterface.OnClickListener?,
+    title: CharSequence,
+    message: CharSequence,
+    positiveButtonClickListener: DialogInterface.OnClickListener? = null,
+    negativeButtonClickListener: DialogInterface.OnClickListener? = null,
 ) {
     val builder = AlertDialog.Builder(this)
     builder.setTitle(title)

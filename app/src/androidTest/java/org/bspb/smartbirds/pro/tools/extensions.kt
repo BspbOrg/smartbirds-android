@@ -9,7 +9,7 @@ import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.matcher.BoundedMatcher
 import androidx.test.espresso.matcher.ViewMatchers.*
 import com.google.android.material.textfield.TextInputLayout
-import org.bspb.smartbirds.pro.ui.views.SingleChoiceFormInput.NomenclatureItem
+import org.bspb.smartbirds.pro.ui.views.NomenclatureItem
 import org.hamcrest.BaseMatcher
 import org.hamcrest.Description
 import org.hamcrest.Matcher
@@ -25,7 +25,7 @@ fun nomenclatureWithLabel(label: String): Matcher<NomenclatureItem> {
         override fun matches(item: Any?): Boolean {
             checkNotNull(item)
             if (item !is NomenclatureItem) return false
-            return equalTo(label).matches(item.nomenclature.label.get("en"))
+            return equalTo(label).matches(item.nomenclature?.label?.get("en"))
         }
 
         override fun describeTo(description: Description) {

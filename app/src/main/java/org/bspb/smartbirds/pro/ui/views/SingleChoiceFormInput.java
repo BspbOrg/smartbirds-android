@@ -156,12 +156,12 @@ public class SingleChoiceFormInput extends TextViewFormInput implements SupportS
     }
 
     public String getSelection() {
-        return mSelectedItem != null ? mSelectedItem.label : null;
+        return mSelectedItem != null ? mSelectedItem.getLabel() : null;
     }
 
     public Nomenclature getSelectedItem() {
         return mSelectedItem != null
-                ? mSelectedItem.nomenclature
+                ? mSelectedItem.getNomenclature()
                 : null;
     }
 
@@ -169,13 +169,13 @@ public class SingleChoiceFormInput extends TextViewFormInput implements SupportS
         setSelection(new NomenclatureItem(label));
     }
 
-    protected void setSelection(NomenclatureItem item) {
+    public void setSelection(NomenclatureItem item) {
         if (mAdapter == null || mAdapter.getCount() == 0) {
             if (!settingSelection) {
                 settingSelection = true;
                 try {
                     // in some cases item can be null
-                    setText(item != null ? item.label : null);
+                    setText(item != null ? item.getLabel() : null);
                 } finally {
                     settingSelection = false;
                 }
@@ -198,7 +198,7 @@ public class SingleChoiceFormInput extends TextViewFormInput implements SupportS
 
         mSelectedItem = item;
         if (item != null) {
-            setText(item.label);
+            setText(item.getLabel());
             setError(null);
         } else {
             setText("");
@@ -219,10 +219,10 @@ public class SingleChoiceFormInput extends TextViewFormInput implements SupportS
         storage.put(fieldName, getText().toString().replace("\n", MULTIPLE_CHOICE_DELIMITER));
         String locale = getContext().getString(R.string.locale);
         if (mSelectedItem != null) {
-            if (mSelectedItem.nomenclature.label.hasValue(locale)) {
-                storage.put(fieldName + "." + locale, mSelectedItem.nomenclature.label.get(locale));
+            if (mSelectedItem.getNomenclature().label.hasValue(locale)) {
+                storage.put(fieldName + "." + locale, mSelectedItem.getNomenclature().label.get(locale));
             }
-            storage.put(fieldName + ".en", mSelectedItem.nomenclature.label.get("en"));
+            storage.put(fieldName + ".en", mSelectedItem.getNomenclature().label.get("en"));
         } else {
             storage.put(fieldName + "." + locale, "");
             storage.put(fieldName + ".en", "");
@@ -299,12 +299,12 @@ public class SingleChoiceFormInput extends TextViewFormInput implements SupportS
                     mAdapter.sort(new Comparator<NomenclatureItem>() {
                         @Override
                         public int compare(NomenclatureItem o1, NomenclatureItem o2) {
-                            int idx1 = recentItems.indexOf(o1.nomenclature);
-                            int idx2 = recentItems.indexOf(o2.nomenclature);
+                            int idx1 = recentItems.indexOf(o1.getNomenclature());
+                            int idx2 = recentItems.indexOf(o2.getNomenclature());
                             if (idx1 >= 0 && idx2 >= 0) return idx1 - idx2;
                             if (idx1 >= 0) return -1;
                             if (idx2 >= 0) return 1;
-                            return AlphanumComparator.compareStrings(o1.label, o2.label);
+                            return AlphanumComparator.compareStrings(o1.getLabel(), o2.getLabel());
                         }
                     });
                 }
@@ -408,49 +408,6 @@ public class SingleChoiceFormInput extends TextViewFormInput implements SupportS
                 logException(e);
             }
 
-        }
-    }
-
-    public static class NomenclatureItem extends Object {
-        @VisibleForTesting
-        public final Nomenclature nomenclature;
-        final String label;
-
-        NomenclatureItem(String label) {
-            this.nomenclature = null;
-            this.label = prepare(label);
-        }
-
-        NomenclatureItem(Nomenclature nomenclature) {
-            this.nomenclature = nomenclature;
-            this.label = prepare(nomenclature.localeLabel);
-        }
-
-        private String prepare(String label) {
-            if (isEmpty(label)) return "";
-            return join("\n", label.trim().split(MULTIPLE_CHOICE_SPLITTER));
-        }
-
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-
-            NomenclatureItem that = (NomenclatureItem) o;
-
-            return label.equals(that.label);
-
-        }
-
-        @Override
-        public int hashCode() {
-            return label.hashCode();
-        }
-
-        @Override
-        public String toString() {
-            return label;
         }
     }
 

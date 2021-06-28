@@ -370,4 +370,7 @@ Do you really want to cancel the monitoring?"</string>
     <string name="sync_error_general_message">There was an error uploading the data. Please try again.</string>
     <string name="sync_error_details">Details:</string>
     <string name="sync_error_missing_image">Missing image %s for %s</string>
+    <string name="quick_choice_button_empty">---</string>
+    <string name="nomenclatures_not_ready_title">Warning</string>
+    <string name="nomenclatures_not_ready_message">Nomenclatures are not loaded. Please try again later.</string>
 </resources>

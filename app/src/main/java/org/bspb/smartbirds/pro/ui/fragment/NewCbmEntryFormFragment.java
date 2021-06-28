@@ -20,6 +20,7 @@ import org.bspb.smartbirds.pro.enums.EntryType;
 import org.bspb.smartbirds.pro.prefs.CbmPrefs_;
 import org.bspb.smartbirds.pro.prefs.CommonPrefs_;
 import org.bspb.smartbirds.pro.ui.utils.Configuration;
+import org.bspb.smartbirds.pro.ui.views.CbmQuickChoiceFormInput;
 import org.bspb.smartbirds.pro.ui.views.SingleChoiceFormInput;
 import org.bspb.smartbirds.pro.ui.views.SwitchFormInput;
 import org.bspb.smartbirds.pro.ui.views.ZoneFormInput;
@@ -44,6 +45,12 @@ public class NewCbmEntryFormFragment extends BaseEntryFragment {
 
     @ViewById(R.id.form_cbm_confidential)
     SwitchFormInput confidential;
+
+    @ViewById(R.id.form_cbm_species_quick)
+    CbmQuickChoiceFormInput speciesQuickChoice;
+
+    @ViewById(R.id.form_cbm_name)
+    SingleChoiceFormInput speciesInput;
 
     @Pref
     CbmPrefs_ prefs;
@@ -89,6 +96,10 @@ public class NewCbmEntryFormFragment extends BaseEntryFragment {
         if (picturesFragment == null) {
             picturesFragment = (NewEntryPicturesFragment) getChildFragmentManager().findFragmentById(R.id.pictures_fragment);
         }
+        speciesQuickChoice.setOnItemSelected(nomenclatureItem -> {
+            speciesInput.setSelection(nomenclatureItem);
+            return null;
+        });
     }
 
     @TextChange(R.id.form_cbm_zone)

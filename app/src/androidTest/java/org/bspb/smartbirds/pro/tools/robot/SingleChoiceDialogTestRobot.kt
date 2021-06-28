@@ -8,6 +8,7 @@ import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withText
+import org.bspb.smartbirds.pro.ui.views.NomenclatureItem
 import org.bspb.smartbirds.pro.ui.views.SingleChoiceFormInput
 import org.hamcrest.CoreMatchers.instanceOf
 import org.hamcrest.Matcher
@@ -28,5 +29,5 @@ class SingleChoiceDialogTestRobot : SingleChoiceDialogRobot {
         onView(withText(resource)).check(matches(ViewMatchers.isDisplayed()))
 
     fun listItem(idx: Int): DataInteraction =
-        onData(instanceOf(SingleChoiceFormInput.NomenclatureItem::class.java)).atPosition(idx)
+        onData(instanceOf(NomenclatureItem::class.java)).atPosition(idx)
 }

@@ -37,6 +37,18 @@
 
             <TableRow>
 
+                <org.bspb.smartbirds.pro.ui.views.CbmQuickChoiceFormInput
+                    android:id="@+id/form_cbm_species_quick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="10"
+                    app:entriesType="species_birds"
+                    app:hint="@string/monitoring_cbm_name" />
+            </TableRow>
+
+            <TableRow>
+
+
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/TextInputLayout"
                     android:layout_width="wrap_content"

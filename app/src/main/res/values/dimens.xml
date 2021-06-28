@@ -7,4 +7,7 @@
     <dimen name="form_vertical_spacing">12dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="submit_panel_height">80dp</dimen>
+    <dimen name="field_padding_left">15dp</dimen>
+    <dimen name="field_padding_right">15dp</dimen>
+    <dimen name="field_padding_bottom">5dp</dimen>
 </resources>

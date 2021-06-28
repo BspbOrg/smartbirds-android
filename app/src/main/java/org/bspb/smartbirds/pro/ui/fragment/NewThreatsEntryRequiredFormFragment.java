@@ -194,7 +194,7 @@ public class NewThreatsEntryRequiredFormFragment extends BaseFormFragment {
     }
 
     private void handleClassInput(String value) {
-        species.setSelection(null);
+        species.setSelection((String) null);
         if (value == null) {
             return;
         }
