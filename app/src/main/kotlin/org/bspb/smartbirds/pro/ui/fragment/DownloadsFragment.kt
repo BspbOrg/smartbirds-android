@@ -52,7 +52,8 @@ open class DownloadsFragment : Fragment() {
         var downloads: List<DownloadsItem>? = null
         if (!TextUtils.isEmpty(cachedDownloads)) {
             val listType = object : TypeToken<List<DownloadsItem?>?>() {}.type
-            downloads = SBGsonParser.createParser().fromJson<List<DownloadsItem>>(cachedDownloads, listType)
+            downloads =
+                SBGsonParser.createParser().fromJson<List<DownloadsItem>>(cachedDownloads, listType)
         }
 
         fetchDownloads()
@@ -63,8 +64,7 @@ open class DownloadsFragment : Fragment() {
     private fun listDownloads(downloads: List<DownloadsItem>?) {
         val availableDownloads = ArrayList<DownloadsItem>()
 
-
-        downloads?.forEach {
+        downloads?.iterator()?.forEach {
             it.title?.apply {
                 if (this.hasValue(locale)) {
                     availableDownloads.add(it)
@@ -88,7 +88,10 @@ open class DownloadsFragment : Fragment() {
 
         var call = backend.api().getDownloads(getString(R.string.downloads_url))
         call.enqueue(object : Callback<DownloadsResponse> {
-            override fun onResponse(call: Call<DownloadsResponse>, response: Response<DownloadsResponse>) {
+            override fun onResponse(
+                call: Call<DownloadsResponse>,
+                response: Response<DownloadsResponse>
+            ) {
                 if (context == null) {
                     return
                 }
