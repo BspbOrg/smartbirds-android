@@ -130,7 +130,7 @@ dependencies {
 
     // TODO: migrate to https://commons.apache.org/proper/commons-csv/
     implementation 'com.googlecode.jcsv:jcsv:1.4.0'
-    implementation 'com.google.maps.android:android-maps-utils:2.2.3'
+    implementation 'com.google.maps.android:android-maps-utils:2.2.5'
 
     implementation 'org.osmdroid:osmdroid-android:6.1.10'
     implementation 'com.github.MKergall:osmbonuspack:6.7.0'
