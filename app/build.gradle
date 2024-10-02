@@ -165,7 +165,7 @@ dependencies {
     implementation("de.greenrobot:eventbus:2.4.1")
 
     // Crashlytics Kit
-    implementation("com.google.firebase:firebase-crashlytics:19.0.3")
+    implementation("com.google.firebase:firebase-crashlytics:19.2.0")
 
     implementation("com.google.firebase:firebase-analytics:22.1.0")
 
