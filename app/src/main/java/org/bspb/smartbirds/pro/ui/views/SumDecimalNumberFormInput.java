@@ -1,5 +1,7 @@
 package org.bspb.smartbirds.pro.ui.views;
 
+import static android.text.TextUtils.isEmpty;
+
 import android.content.Context;
 import android.text.Editable;
 import android.text.method.DigitsKeyListener;
@@ -10,8 +12,6 @@ import org.bspb.smartbirds.pro.R;
 
 import java.util.regex.Pattern;
 
-import static android.text.TextUtils.isEmpty;
-
 /**
  * Input field for numbers that will be summed together.
  * Ime actions Go / Next are replaced with + sign. When a number is chosen then pressing the
@@ -21,7 +21,7 @@ import static android.text.TextUtils.isEmpty;
  * <p>
  * Created by Ilian Georgiev.
  */
-public class SumDecimalNumberFormInput extends DecimalNumberFormInput {
+public class SumDecimalNumberFormInput extends PositiveDecimalNumberFormInput {
 
     private static final String PLUS = "+";
     private static final String PLUS_PATTERN = Pattern.quote(PLUS);
@@ -47,6 +47,8 @@ public class SumDecimalNumberFormInput extends DecimalNumberFormInput {
         setImeOptions(EditorInfo.IME_ACTION_NEXT | EditorInfo.IME_FLAG_NO_FULLSCREEN | EditorInfo.IME_FLAG_NO_EXTRACT_UI | EditorInfo.IME_FLAG_NAVIGATE_NEXT);
         setImeActionLabel(context.getText(R.string.sum_decimal_number_form_input_plus), EditorInfo.IME_ACTION_NEXT);
         setKeyListener(DigitsKeyListener.getInstance("0123456789+"));
+
+        setIncludeZero(false);
     }
 
     @Override

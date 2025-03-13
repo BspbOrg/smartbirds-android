@@ -21,6 +21,7 @@ import org.bspb.smartbirds.pro.events.LocationChangedEvent;
 import org.bspb.smartbirds.pro.prefs.BirdPrefs;
 import org.bspb.smartbirds.pro.prefs.CommonPrefs;
 import org.bspb.smartbirds.pro.ui.views.DecimalNumberFormInput;
+import org.bspb.smartbirds.pro.ui.views.PositiveDecimalNumberFormInput;
 import org.bspb.smartbirds.pro.ui.views.SingleChoiceFormInput;
 import org.bspb.smartbirds.pro.ui.views.SwitchFormInput;
 
@@ -41,7 +42,7 @@ public class NewBirdsEntryRequiredFormFragment extends BaseFormFragment {
 
     SingleChoiceFormInput countUnits;
     SingleChoiceFormInput countType;
-    DecimalNumberFormInput count;
+    PositiveDecimalNumberFormInput count;
     DecimalNumberFormInput countMin;
     DecimalNumberFormInput countMax;
     SwitchFormInput confidential;

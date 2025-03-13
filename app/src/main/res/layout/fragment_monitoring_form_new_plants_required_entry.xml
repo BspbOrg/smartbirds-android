@@ -96,12 +96,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <org.bspb.smartbirds.pro.ui.views.DecimalNumberFormInput
+            <org.bspb.smartbirds.pro.ui.views.PositiveDecimalNumberFormInput
                 android:id="@+id/form_plants_count"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/monitoring_plants_count"
-                android:tag="@string/tag_count" />
+                android:tag="@string/tag_count"
+                app:includeZero="false" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <View style="@style/GroupSeparator" />

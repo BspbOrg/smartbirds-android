@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import org.bspb.smartbirds.pro.R;
 import org.bspb.smartbirds.pro.prefs.CommonPrefs;
 import org.bspb.smartbirds.pro.prefs.HerptilePrefs;
-import org.bspb.smartbirds.pro.ui.views.DecimalNumberFormInput;
+import org.bspb.smartbirds.pro.ui.views.PositiveDecimalNumberFormInput;
 import org.bspb.smartbirds.pro.ui.views.SingleChoiceFormInput;
 import org.bspb.smartbirds.pro.ui.views.SwitchFormInput;
 
@@ -24,7 +24,7 @@ import java.util.HashMap;
 public class NewHerptileEntryRequiredFormFragment extends BaseFormFragment {
 
     SingleChoiceFormInput habitat;
-    DecimalNumberFormInput count;
+    PositiveDecimalNumberFormInput count;
     SwitchFormInput confidential;
 
     HerptilePrefs prefs;
