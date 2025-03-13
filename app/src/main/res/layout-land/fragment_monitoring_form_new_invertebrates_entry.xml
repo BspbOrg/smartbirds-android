@@ -92,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:layout_span="2">
 
-                    <org.bspb.smartbirds.pro.ui.views.DecimalNumberFormInput
+                    <org.bspb.smartbirds.pro.ui.views.PositiveDecimalNumberFormInput
                         android:id="@+id/form_invertebrates_count"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -100,6 +100,7 @@
                         android:tag="@string/tag_count"
                         android:text="1"
                         app:required="true"
+                        app:includeZero="false"
                         tools:ignore="HardcodedText" />
                 </com.google.android.material.textfield.TextInputLayout>
             </TableRow>

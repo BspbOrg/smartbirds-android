@@ -14,7 +14,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import org.bspb.smartbirds.pro.R;
 import org.bspb.smartbirds.pro.prefs.CommonPrefs;
 import org.bspb.smartbirds.pro.ui.utils.FormsConfig;
-import org.bspb.smartbirds.pro.ui.views.DecimalNumberFormInput;
+import org.bspb.smartbirds.pro.ui.views.PositiveDecimalNumberFormInput;
 import org.bspb.smartbirds.pro.ui.views.SingleChoiceConfigFormInput;
 import org.bspb.smartbirds.pro.ui.views.SingleChoiceConfigRadioFormInput;
 import org.bspb.smartbirds.pro.ui.views.SingleChoiceFormInput;
@@ -42,7 +42,7 @@ public class NewThreatsEntryRequiredFormFragment extends BaseFormFragment {
     SingleChoiceFormInput category;
     SingleChoiceConfigFormInput classInput;
     SingleChoiceFormInput species;
-    DecimalNumberFormInput count;
+    PositiveDecimalNumberFormInput count;
     SingleChoiceFormInput estimate;
     SingleChoiceConfigRadioFormInput poisonedType;
     SingleChoiceFormInput stateCarcass;

@@ -39,6 +39,7 @@
         <enum name="horizontal" value="0" />
         <enum name="vertical" value="1" />
     </attr>
+    <attr name="includeZero" format="boolean" />
 
     <!-- Stylable attributes for SingleChoiceFormInput -->
     <declare-styleable name="SingleChoiceFormInput">
@@ -88,5 +89,9 @@
         <attr name="required" />
         <attr name="orientation" />
         <attr name="singleSelection" />
+    </declare-styleable>
+
+    <declare-styleable name="PositiveDecimalNumberFormInput">
+        <attr name="includeZero" />
     </declare-styleable>
 </resources>

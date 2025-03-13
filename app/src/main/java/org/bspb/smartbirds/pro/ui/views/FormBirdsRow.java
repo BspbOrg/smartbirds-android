@@ -26,7 +26,7 @@ public class FormBirdsRow extends LinearLayout implements SingleChoiceFormInput.
     protected SingleChoiceFormInput species;
     protected SingleChoiceFormInput countUnits;
     protected SingleChoiceFormInput countType;
-    protected DecimalNumberFormInput count;
+    protected PositiveDecimalNumberFormInput count;
     protected DecimalNumberFormInput countMin;
     protected DecimalNumberFormInput countMax;
 

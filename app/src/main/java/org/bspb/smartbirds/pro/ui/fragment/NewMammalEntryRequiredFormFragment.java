@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import org.bspb.smartbirds.pro.R;
 import org.bspb.smartbirds.pro.prefs.CommonPrefs;
 import org.bspb.smartbirds.pro.prefs.MammalPrefs;
-import org.bspb.smartbirds.pro.ui.views.DecimalNumberFormInput;
+import org.bspb.smartbirds.pro.ui.views.PositiveDecimalNumberFormInput;
 import org.bspb.smartbirds.pro.ui.views.SingleChoiceFormInput;
 import org.bspb.smartbirds.pro.ui.views.SwitchFormInput;
 
@@ -24,7 +24,7 @@ import java.util.HashMap;
 public class NewMammalEntryRequiredFormFragment extends BaseFormFragment {
 
     SingleChoiceFormInput habitat;
-    DecimalNumberFormInput count;
+    PositiveDecimalNumberFormInput count;
     SwitchFormInput confidential;
 
     MammalPrefs prefs;
@@ -97,7 +97,7 @@ public class NewMammalEntryRequiredFormFragment extends BaseFormFragment {
     @Override
     protected void initViews() {
         super.initViews();
-        
+
         habitat = requireView().findViewById(R.id.form_herp_habitat);
         count = requireView().findViewById(R.id.form_herp_count);
         confidential = requireView().findViewById(R.id.form_mammals_confidential);
