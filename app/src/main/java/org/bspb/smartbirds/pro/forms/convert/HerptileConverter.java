@@ -37,6 +37,7 @@ public class HerptileConverter extends Converter {
         addBool(R.string.tag_confidential, "confidential");
         addMulti(R.string.tag_threats, "threats");
         addBool(R.string.tag_moderator_review, "moderatorReview");
+        add(R.string.tag_traps_count, "trapsCount");
     }
 
 }

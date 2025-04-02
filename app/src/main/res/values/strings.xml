@@ -511,4 +511,5 @@ Do you really want to cancel the monitoring?"</string>
     <string name="delete_account_dialog_error_message">Failed to delete account</string>
     <string name="deleting_account_progress">Deleting account...</string>
     <string name="dialog_delete_account_btn_yes">Yes, delete account.</string>
+    <string name="monitoring_herptiles_traps_count">Traps count</string>
 </resources>
