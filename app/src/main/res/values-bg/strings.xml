@@ -504,4 +504,5 @@
     <string name="settings_show_current_location_circle">"Текуща зона на местоположение"</string>
     <string name="notifications_permission_rationale">"Показването на нотификаций е необходимо за стартирането на мониторинг"</string>
     <string name="monitoring_fish_total_length">"Обща дължина на тялото (TL) в категории, cm"</string>
+    <string name="monitoring_herptiles_traps_count">Брой капани</string>
 </resources>

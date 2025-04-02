@@ -199,6 +199,23 @@
                     android:layout_height="wrap_content"
                     android:layout_span="10">
 
+                    <org.bspb.smartbirds.pro.ui.views.PositiveDecimalNumberFormInput
+                        android:id="@+id/form_herptiles_traps_count"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/monitoring_herptiles_traps_count"
+                        android:tag="@string/tag_traps_count" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </TableRow>
+
+            <TableRow>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="10">
+
                     <org.bspb.smartbirds.pro.ui.views.MultipleTextFormInput
                         android:id="@+id/form_herptiles_notes"
                         android:layout_width="match_parent"
