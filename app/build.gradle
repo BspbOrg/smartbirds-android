@@ -7,8 +7,8 @@ plugins {
     id("com.google.devtools.ksp")
 }
 
-def versionNameBase = "2.0.85"
-def versionCodeBase = 155
+def versionNameBase = "2.0.88"
+def versionCodeBase = 158
 
 def betaKeystorePropertiesFile = rootProject.file("keystore-beta.properties")
 def uploadKeystorePropertiesFile = rootProject.file("keystore-upload.properties")
