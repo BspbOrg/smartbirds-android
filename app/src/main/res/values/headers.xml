@@ -211,5 +211,13 @@
     <string name="tag_tragus" translatable="false">tragus</string>
     <string name="tag_upper_molar" translatable="false">upperMolar</string>
     <string name="tag_total_length" translatable="false">totalLength</string>
-    <string name="tag_traps_count" translatable="false">trapsCount</string>s
+    <string name="tag_traps_count" translatable="false">trapsCount</string>
+    <string name="tag_excrement_content" translatable="false">excrementContent</string>
+    <string name="tag_excrement_consistence" translatable="false">excrementConsistence</string>
+    <string name="tag_marking_height" translatable="false">markingHeight</string>
+    <string name="tag_den" translatable="false">den</string>
+    <string name="tag_footprint_front_paw_width" translatable="false">footprintFrontPawWidth</string>
+    <string name="tag_footprint_front_paw_length" translatable="false">footprintFrontPawLength</string>
+    <string name="tag_footprint_hind_paw_width" translatable="false">footprintHindPawWidth</string>
+    <string name="tag_footprint_hind_paw_length" translatable="false">footprintHindPawLength</string>
 </resources>

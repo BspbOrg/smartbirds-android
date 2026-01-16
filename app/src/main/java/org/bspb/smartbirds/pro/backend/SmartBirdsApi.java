@@ -100,6 +100,9 @@ public interface SmartBirdsApi {
     @POST("bats")
     Call<UploadFormResponse> createBat(@Body JsonObject request);
 
+    @POST("bears")
+    Call<UploadFormResponse> createBear(@Body JsonObject request);
+
     @DELETE("user/{id}")
     Call<BaseResponse> deleteUser(@Path("id") long id);
 }
