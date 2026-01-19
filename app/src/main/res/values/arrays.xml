@@ -49,6 +49,7 @@
         <item>@string/entry_type_birds_migrations</item>
         <item>@string/entry_type_fish</item>
         <item>@string/entry_type_bats</item>
+        <item>@string/entry_type_bears</item>
     </array>
 
     <array name="monitoring_form_values">
@@ -66,6 +67,7 @@
         <item>BIRDS_MIGRATIONS</item>
         <item>FISH</item>
         <item>BATS</item>
+        <item>BEARS</item>
     </array>
 
     <array name="attach_image_options">

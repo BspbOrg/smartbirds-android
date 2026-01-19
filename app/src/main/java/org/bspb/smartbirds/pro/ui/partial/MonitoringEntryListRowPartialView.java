@@ -178,6 +178,12 @@ public class MonitoringEntryListRowPartialView extends LinearLayout implements C
                 speciesView.setText(entry.data.get(context.getString(R.string.tag_species_scientific_name)));
                 countView.setText(entry.data.get(context.getString(R.string.tag_count)));
                 break;
+            case BEARS:
+                typeView.setText(R.string.entry_type_bears);
+                speciesView.setText(entry.data.get(context.getString(R.string.tag_species_scientific_name)));
+                countView.setText(entry.data.get(context.getString(R.string.tag_count)));
+                break;
+
         }
     }
 

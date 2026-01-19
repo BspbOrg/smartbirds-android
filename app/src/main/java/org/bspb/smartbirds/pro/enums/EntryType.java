@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import org.bspb.smartbirds.pro.R;
 import org.bspb.smartbirds.pro.forms.convert.BatsConverter;
+import org.bspb.smartbirds.pro.forms.convert.BearsConverter;
 import org.bspb.smartbirds.pro.forms.convert.BirdsConverter;
 import org.bspb.smartbirds.pro.forms.convert.BirdsMigrationsConverter;
 import org.bspb.smartbirds.pro.forms.convert.CbmConverter;
@@ -25,6 +26,7 @@ import org.bspb.smartbirds.pro.forms.convert.PylonsCasualtiesConverter;
 import org.bspb.smartbirds.pro.forms.convert.PylonsConverter;
 import org.bspb.smartbirds.pro.forms.convert.ThreatsConverter;
 import org.bspb.smartbirds.pro.forms.upload.BatsUploader;
+import org.bspb.smartbirds.pro.forms.upload.BearsUploader;
 import org.bspb.smartbirds.pro.forms.upload.BirdsMigrationsUploader;
 import org.bspb.smartbirds.pro.forms.upload.BirdsUploader;
 import org.bspb.smartbirds.pro.forms.upload.CbmUploader;
@@ -40,6 +42,7 @@ import org.bspb.smartbirds.pro.forms.upload.ThreatsUploader;
 import org.bspb.smartbirds.pro.forms.upload.Uploader;
 import org.bspb.smartbirds.pro.ui.fragment.BaseEntryFragment;
 import org.bspb.smartbirds.pro.ui.fragment.NewBatsEntryFormFragment;
+import org.bspb.smartbirds.pro.ui.fragment.NewBearsEntryFormFragment;
 import org.bspb.smartbirds.pro.ui.fragment.NewBirdsEntryFormFragment;
 import org.bspb.smartbirds.pro.ui.fragment.NewBirdsMigrationsEntryFormFragment;
 import org.bspb.smartbirds.pro.ui.fragment.NewCbmEntryFormFragment;
@@ -74,6 +77,7 @@ public enum EntryType {
     BIRDS_MIGRATIONS(new NewBirdsMigrationsEntryFormFragment.Builder(), R.string.entry_type_birds_migrations, R.id.action_form_type_birds_migrations, "form_birds_migrations.csv", BirdsMigrationsConverter.class, BirdsMigrationsUploader.class, true),
     FISH(new NewFishesEntryFormFragment.Builder(), R.string.entry_type_fish, R.id.action_form_type_fish, "form_fish.csv", FishesConverter.class, FishesUploader.class, true),
     BATS(new NewBatsEntryFormFragment.Builder(), R.string.entry_type_bats, R.id.action_form_type_bats, "form_bats.csv", BatsConverter.class, BatsUploader.class, true),
+    BEARS(new NewBearsEntryFormFragment.Builder(), R.string.entry_type_bears, R.id.action_form_type_bears, "form_bears.csv", BearsConverter.class, BearsUploader.class, true)
     // prevent auto-formatting
     ;
 
@@ -91,7 +95,8 @@ public enum EntryType {
             R.id.action_form_type_pylons_casualties,
             R.id.action_form_type_birds_migrations,
             R.id.action_form_type_fish,
-            R.id.action_form_type_bats
+            R.id.action_form_type_bats,
+            R.id.action_form_type_bears
     };
 
     private final BaseEntryFragment.Builder builder;

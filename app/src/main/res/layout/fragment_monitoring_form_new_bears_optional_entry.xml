@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/form_horizontal_spacing"
+        android:paddingTop="@dimen/form_vertical_spacing"
+        android:paddingRight="@dimen/form_horizontal_spacing"
+        android:paddingBottom="@dimen/form_vertical_spacing">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <org.bspb.smartbirds.pro.ui.views.PositiveFloatNumberFormInput
+                android:id="@+id/form_bears_footprint_front_paw_width"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/monitoring_bears_front_paw_width"
+                android:tag="@string/tag_footprint_front_paw_width" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View style="@style/FieldSeparator" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <org.bspb.smartbirds.pro.ui.views.PositiveFloatNumberFormInput
+                android:id="@+id/form_bears_footprint_front_paw_length"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/monitoring_bears_front_paw_length"
+                android:tag="@string/tag_footprint_front_paw_length" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View style="@style/FieldSeparator" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <org.bspb.smartbirds.pro.ui.views.PositiveFloatNumberFormInput
+                android:id="@+id/form_bears_footprint_hind_paw_width"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/monitoring_bears_hind_paw_width"
+                android:tag="@string/tag_footprint_hind_paw_width" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View style="@style/FieldSeparator" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <org.bspb.smartbirds.pro.ui.views.PositiveFloatNumberFormInput
+                android:id="@+id/form_bears_footprint_hind_paw_length"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/monitoring_bears_hind_paw_length"
+                android:tag="@string/tag_footprint_hind_paw_length" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View style="@style/FieldSeparator" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/monitoring_bears_footprint_measure_scheme"
+            android:src="@drawable/form_bears_footprint"
+            android:scaleType="centerInside"
+            android:layout_marginTop="32dp"
+            android:adjustViewBounds="false" />
+
+    </LinearLayout>
+</ScrollView>

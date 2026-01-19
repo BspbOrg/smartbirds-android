@@ -143,6 +143,11 @@
                     android:title="@string/entry_type_bats"
                     android:visible="false" />
 
+                <item
+                    android:id="@+id/action_form_type_bears"
+                    android:title="@string/entry_type_bears"
+                    android:visible="false" />
+
             </group>
         </menu>
     </item>
