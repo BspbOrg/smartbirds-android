@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+<resources>
     <string name="app_name">"SmartBirds Pro"</string>
     <string name="title_activity_start_monitoring">"Begin monitoring"</string>
     <string name="title_activity_monitoring">"Monitoring"</string>
@@ -174,7 +174,7 @@ Do you really want to cancel the monitoring?"</string>
 			<br />
             <p>and the Programme LIFE of the EU<p>
             <img src="life_NEW" width="120" height="120"/>
-            <img src="natura2000_NEW" width="120" height="120"/>
+            <img src="natura2000_NEW" width="120" height="120"/>            
             <br />
             <br />
                  <p>
@@ -344,8 +344,6 @@ Do you really want to cancel the monitoring?"</string>
     <string name="settings_category_advanced">"Advanced"</string>
     <string name="settings_export_db">"Export DB"</string>
     <string name="settings_export_db_summary">"Export the DB in Downloads."</string>
-    <string name="settings_delete_account">"Delete account"</string>
-    <string name="settings_delete_account_summary">"This operation will delete your account and all related data. It cannot be undone! "</string>
     <string name="settings_enabled_forms_alert_title">"Warning"</string>
     <string name="settings_enabled_forms_alert_message">"You have to select at least one active monitoring form."</string>
     <string name="export_db_dialog_title_success">"Success"</string>
@@ -372,7 +370,6 @@ Do you really want to cancel the monitoring?"</string>
     <string name="sync_error_details">"Details:"</string>
     <string name="monitoring_common_observation_methodology">"Methodology"</string>
     <string name="sync_error_missing_image">"Missing image %s for %s"</string>
-    <string name="sync_error_missing_files">"Missing files for %s"</string>
     <string name="quick_choice_button_empty">"---"</string>
     <string name="nomenclatures_not_ready_title">"Warning"</string>
     <string name="nomenclatures_not_ready_message">"Nomenclatures are not loaded. Please try again later."</string>
@@ -503,15 +500,18 @@ Do you really want to cancel the monitoring?"</string>
     <string name="form_birds_distance_value">"%.0f m"</string>
     <string name="settings_show_current_location_circle_summary">"Draw circles through 50m from the current position"</string>
     <string name="settings_show_current_location_circle">"Current location zone"</string>
-    <string name="notifications_permission_rationale">"Notification permission is required for starting a monitoring"</string>
     <string name="monitoring_fish_total_length">"Total length (TL) class, cm"</string>
-    <string name="delete_account_dialog_title">Delete account</string>
-    <string name="delete_account_dialog_confirmation_message">Are you sure you want to delete your account?</string>
-    <string name="delete_account_dialog_confirmation_warning_message">Warning: This action cannot be undone.</string>
-    <string name="delete_account_dialog_error_message">Failed to delete account</string>
-    <string name="deleting_account_progress">Deleting account...</string>
-    <string name="dialog_delete_account_btn_yes">Yes, delete account.</string>
-    <string name="monitoring_herptiles_traps_count">Traps count</string>
+    <string name="settings_delete_account">"Delete account"</string>
+    <string name="settings_delete_account_summary">"This operation will delete your account and all related data. It cannot be undone! "</string>
+    <string name="sync_error_missing_files">"Missing files for %s"</string>
+    <string name="notifications_permission_rationale">"Notification permission is required for starting a monitoring"</string>
+    <string name="delete_account_dialog_title">"Delete account"</string>
+    <string name="delete_account_dialog_confirmation_message">"Are you sure you want to delete your account?"</string>
+    <string name="delete_account_dialog_confirmation_warning_message">"Warning: This action cannot be undone."</string>
+    <string name="delete_account_dialog_error_message">"Failed to delete account"</string>
+    <string name="deleting_account_progress">"Deleting account..."</string>
+    <string name="dialog_delete_account_btn_yes">"Yes, delete account."</string>
+    <string name="monitoring_herptiles_traps_count">"Traps count"</string>
     <string name="monitoring_bears_name">"Species"</string>
     <string name="monitoring_bears_age">"Age"</string>
     <string name="monitoring_bears_gender">"Sex"</string>
@@ -524,10 +524,10 @@ Do you really want to cancel the monitoring?"</string>
     <string name="monitoring_bears_findings">"Behavior/Findings"</string>
     <string name="monitoring_bears_threats">"Threats"</string>
     <string name="monitoring_bears_notes">"Notes"</string>
-    <string name="monitoring_bears_front_paw_width">Tracks: Front paw - width (mm)</string>
-    <string name="monitoring_bears_front_paw_length">Tracks: Front paw - longest claw length (mm)</string>
-    <string name="monitoring_bears_hind_paw_width">Tracks: Hind paw - width (mm)</string>
-    <string name="monitoring_bears_hind_paw_length">Tracks: Hind paw - length without claws (mm)</string>
-    <string name="monitoring_bears_footprint_measure_scheme">Footprint measure scheme</string>
-    <string name="entry_type_bears">Bears</string>
+    <string name="monitoring_bears_front_paw_width">"Tracks: Front paw - width (mm)"</string>
+    <string name="monitoring_bears_front_paw_length">"Tracks: Front paw - longest claw length (mm)"</string>
+    <string name="monitoring_bears_hind_paw_width">"Tracks: Hind paw - width (mm)"</string>
+    <string name="monitoring_bears_hind_paw_length">"Tracks: Hind paw - length without claws (mm)"</string>
+    <string name="monitoring_bears_footprint_measure_scheme">"Footprint measure scheme"</string>
+    <string name="entry_type_bears">"Bears"</string>
 </resources>
