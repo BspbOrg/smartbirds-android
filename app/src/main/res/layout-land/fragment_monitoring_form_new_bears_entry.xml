@@ -52,7 +52,7 @@
                         android:hint="@string/monitoring_bears_name"
                         android:tag="@string/tag_species_scientific_name"
                         app:entriesType="species_mammals"
-                        android:enabled="false"
+                        app:readonly="true"
                         app:required="true" />
                 </com.google.android.material.textfield.TextInputLayout>
             </TableRow>

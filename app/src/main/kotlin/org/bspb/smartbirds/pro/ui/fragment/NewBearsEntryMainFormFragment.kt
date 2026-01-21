@@ -63,8 +63,6 @@ class NewBearsEntryMainFormFragment : BaseFormFragment() {
                 species.label.labelId.equals("Ursus arctos", ignoreCase = true)
             }
             bearSpecies?.let { nomenclature ->
-                nomenclature.localeLabel =
-                    nomenclature.label.get(context?.getString(R.string.locale))
                 speciesInput?.setSelectionIfAvailable(NomenclatureItem(nomenclature))
             }
         } catch (t: Throwable) {
