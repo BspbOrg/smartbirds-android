@@ -177,7 +177,7 @@
             <img src="natura2000_NEW" width="120" height="120"/>
             <br />
             <br />
-          
+
             <p>
                 <b>Идеен проект:</b>
                 <br />
@@ -529,4 +529,5 @@
     <string name="monitoring_bears_hind_paw_length">"Следи: Задна лапа - дължина без нокти (mm)"</string>
     <string name="monitoring_bears_footprint_measure_scheme">"Схема на измерване на следите"</string>
     <string name="entry_type_bears">"Мечки"</string>
+    <string name="monitoring_bears_warning_message">Бележка: При забелязана мъртва мечка  и бракониерство незабавно да се подаде сигнал на телефон 112.</string>
 </resources>

@@ -234,6 +234,18 @@
 
         <View style="@style/GroupSeparator" />
 
+        <TextView
+            android:id="@+id/bears_warning_note"
+            style="@style/TextWarning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4sp"
+            android:layout_marginRight="4sp"
+            android:gravity="top"
+            android:text="@string/monitoring_bears_warning_message" />
+
+        <View style="@style/GroupSeparator" />
+
         <fragment
             android:id="@+id/pictures_fragment"
             android:name="org.bspb.smartbirds.pro.ui.fragment.NewEntryPicturesFragment"
