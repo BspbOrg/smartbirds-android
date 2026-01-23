@@ -214,7 +214,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/monitoring_bears_threats"
                 android:tag="@string/tag_threats_other"
-                app:entriesType="bears_danger_observation" />
+                app:entriesType="bears_threats" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <View style="@style/FieldSeparator" />
