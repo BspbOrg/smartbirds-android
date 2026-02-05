@@ -69,6 +69,7 @@ public enum EntryType {
     CICONIA(new NewCiconiaEntryFormFragment.Builder(), R.string.entry_type_ciconia, R.id.action_form_type_ciconia, "form_ciconia.csv", CiconiaConverter.class, CiconiaUploader.class, true),
     HERPTILE(new NewHerptileEntryFormFragment.Builder(), R.string.entry_type_herptile, R.id.action_form_type_herptile, "form_herptile.csv", HerptileConverter.class, HerptileUploader.class, true),
     MAMMAL(new NewMammalEntryFormFragment.Builder(), R.string.entry_type_mammal, R.id.action_form_type_mammal, "form_mammal.csv", MammalConverter.class, MammalUploader.class, true),
+    BEARS(new NewBearsEntryFormFragment.Builder(), R.string.entry_type_bears, R.id.action_form_type_bears, "form_bears.csv", BearsConverter.class, BearsUploader.class, true),
     INVERTEBRATES(new NewInvertebratesEntryFormFragment.Builder(), R.string.entry_type_invertebrates, R.id.action_form_type_invertebrates, "form_invertebrates.csv", InvertebratesConverter.class, InvertebratesUploader.class, true),
     PLANTS(new NewPlantsEntryFormFragment.Builder(), R.string.entry_type_plants, R.id.action_form_type_plants, "form_plants.csv", PlantsConverter.class, PlantsUploader.class, true),
     THREATS(new NewThreatsEntryFormFragment.Builder(), R.string.entry_type_threats, R.id.action_form_type_threats, "form_threats.csv", ThreatsConverter.class, ThreatsUploader.class, true),
@@ -76,8 +77,7 @@ public enum EntryType {
     PYLONS_CASUALTIES(new NewPylonsCasualtiesEntryFormFragment.Builder(), R.string.entry_type_pylons_casualties, R.id.action_form_type_pylons_casualties, "form_pylons_casualties.csv", PylonsCasualtiesConverter.class, PylonsCasualtiesUploader.class, true),
     BIRDS_MIGRATIONS(new NewBirdsMigrationsEntryFormFragment.Builder(), R.string.entry_type_birds_migrations, R.id.action_form_type_birds_migrations, "form_birds_migrations.csv", BirdsMigrationsConverter.class, BirdsMigrationsUploader.class, true),
     FISH(new NewFishesEntryFormFragment.Builder(), R.string.entry_type_fish, R.id.action_form_type_fish, "form_fish.csv", FishesConverter.class, FishesUploader.class, true),
-    BATS(new NewBatsEntryFormFragment.Builder(), R.string.entry_type_bats, R.id.action_form_type_bats, "form_bats.csv", BatsConverter.class, BatsUploader.class, true),
-    BEARS(new NewBearsEntryFormFragment.Builder(), R.string.entry_type_bears, R.id.action_form_type_bears, "form_bears.csv", BearsConverter.class, BearsUploader.class, true)
+    BATS(new NewBatsEntryFormFragment.Builder(), R.string.entry_type_bats, R.id.action_form_type_bats, "form_bats.csv", BatsConverter.class, BatsUploader.class, true)
     // prevent auto-formatting
     ;
 
@@ -88,6 +88,7 @@ public enum EntryType {
             R.id.action_form_type_humid,
             R.id.action_form_type_herptile,
             R.id.action_form_type_mammal,
+            R.id.action_form_type_bears,
             R.id.action_form_type_invertebrates,
             R.id.action_form_type_plants,
             R.id.action_form_type_threats,
@@ -95,8 +96,7 @@ public enum EntryType {
             R.id.action_form_type_pylons_casualties,
             R.id.action_form_type_birds_migrations,
             R.id.action_form_type_fish,
-            R.id.action_form_type_bats,
-            R.id.action_form_type_bears
+            R.id.action_form_type_bats
     };
 
     private final BaseEntryFragment.Builder builder;

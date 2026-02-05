@@ -41,6 +41,7 @@
         <item>@string/entry_type_ciconia</item>
         <item>@string/entry_type_herptile</item>
         <item>@string/entry_type_mammal</item>
+        <item>@string/entry_type_bears</item>
         <item>@string/entry_type_invertebrates</item>
         <item>@string/entry_type_plants</item>
         <item>@string/entry_type_threats</item>
@@ -49,7 +50,6 @@
         <item>@string/entry_type_birds_migrations</item>
         <item>@string/entry_type_fish</item>
         <item>@string/entry_type_bats</item>
-        <item>@string/entry_type_bears</item>
     </array>
 
     <array name="monitoring_form_values">
