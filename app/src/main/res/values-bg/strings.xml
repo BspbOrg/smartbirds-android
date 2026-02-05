@@ -504,12 +504,6 @@
     <string name="settings_delete_account_summary">"Тази операция ще изтрие потребителският ви профил и всички данни свързани с него. Операцията е необратима!"</string>
     <string name="sync_error_missing_files">"Липсващи файлове за %s"</string>
     <string name="notifications_permission_rationale">"Показването на нотификаций е необходимо за стартирането на мониторинг"</string>
-    <string name="delete_account_dialog_title"></string>
-    <string name="delete_account_dialog_confirmation_message"></string>
-    <string name="delete_account_dialog_confirmation_warning_message"></string>
-    <string name="delete_account_dialog_error_message"></string>
-    <string name="deleting_account_progress"></string>
-    <string name="dialog_delete_account_btn_yes"></string>
     <string name="monitoring_herptiles_traps_count">"Брой капани"</string>
     <string name="monitoring_bears_name">"Вид"</string>
     <string name="monitoring_bears_age">"Възраст"</string>
