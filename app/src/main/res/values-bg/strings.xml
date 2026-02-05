@@ -177,7 +177,7 @@
             <img src="natura2000_NEW" width="120" height="120"/>
             <br />
             <br />
-
+          
             <p>
                 <b>Идеен проект:</b>
                 <br />
@@ -523,11 +523,11 @@
     <string name="monitoring_bears_findings">"Поведение/Констатации"</string>
     <string name="monitoring_bears_threats">"Заплахи"</string>
     <string name="monitoring_bears_notes">"Бележки"</string>
-    <string name="monitoring_bears_front_paw_width">"Следи: Предна лапа - ширина (mm)"</string>
-    <string name="monitoring_bears_front_paw_length">"Следи: Предна лапа - дължина най-дълъг нокът (mm)"</string>
-    <string name="monitoring_bears_hind_paw_width">"Следи: Задна лапа - ширина (mm)"</string>
-    <string name="monitoring_bears_hind_paw_length">"Следи: Задна лапа - дължина без нокти (mm)"</string>
+    <string name="monitoring_bears_front_paw_width">"Следи: Предна лапа - ширина (cm)"</string>
+    <string name="monitoring_bears_front_paw_length">"Следи: Предна лапа - дължина най-дълъг нокът (cm)"</string>
+    <string name="monitoring_bears_hind_paw_width">"Следи: Задна лапа - ширина (cm)"</string>
+    <string name="monitoring_bears_hind_paw_length">"Следи: Задна лапа - дължина без нокти (cm)"</string>
     <string name="monitoring_bears_footprint_measure_scheme">"Схема на измерване на следите"</string>
     <string name="entry_type_bears">"Мечки"</string>
-    <string name="monitoring_bears_warning_message">Бележка: При забелязана мъртва мечка  и бракониерство незабавно да се подаде сигнал на телефон 112.</string>
+    <string name="monitoring_bears_warning_message">"Бележка: При забелязана мъртва мечка  и бракониерство незабавно да се подаде сигнал на телефон 112."</string>
 </resources>

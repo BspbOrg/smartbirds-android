@@ -174,7 +174,7 @@ Do you really want to cancel the monitoring?"</string>
 			<br />
             <p>and the Programme LIFE of the EU<p>
             <img src="life_NEW" width="120" height="120"/>
-            <img src="natura2000_NEW" width="120" height="120"/>
+            <img src="natura2000_NEW" width="120" height="120"/>            
             <br />
             <br />
                  <p>
@@ -524,11 +524,11 @@ Do you really want to cancel the monitoring?"</string>
     <string name="monitoring_bears_findings">"Behavior/Findings"</string>
     <string name="monitoring_bears_threats">"Threats"</string>
     <string name="monitoring_bears_notes">"Notes"</string>
-    <string name="monitoring_bears_front_paw_width">"Tracks: Front paw - width (mm)"</string>
-    <string name="monitoring_bears_front_paw_length">"Tracks: Front paw - longest claw length (mm)"</string>
-    <string name="monitoring_bears_hind_paw_width">"Tracks: Hind paw - width (mm)"</string>
-    <string name="monitoring_bears_hind_paw_length">"Tracks: Hind paw - length without claws (mm)"</string>
+    <string name="monitoring_bears_front_paw_width">"Tracks: Front paw - width (cm)"</string>
+    <string name="monitoring_bears_front_paw_length">"Tracks: Front paw - longest claw length (cm)"</string>
+    <string name="monitoring_bears_hind_paw_width">"Tracks: Hind paw - width (cm)"</string>
+    <string name="monitoring_bears_hind_paw_length">"Tracks: Hind paw - length without claws (cm)"</string>
     <string name="monitoring_bears_footprint_measure_scheme">"Footprint measure scheme"</string>
     <string name="entry_type_bears">"Bears"</string>
-    <string name="monitoring_bears_warning_message">Note: If a dead bear or poaching is noticed, immediately report it to 112.</string>
+    <string name="monitoring_bears_warning_message">"Note: If a dead bear or poaching is noticed, immediately report it to 112."</string>
 </resources>
