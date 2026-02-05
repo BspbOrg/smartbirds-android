@@ -105,6 +105,11 @@
                     android:visible="false" />
 
                 <item
+                    android:id="@+id/action_form_type_bears"
+                    android:title="@string/entry_type_bears"
+                    android:visible="false" />
+
+                <item
                     android:id="@+id/action_form_type_invertebrates"
                     android:title="@string/entry_type_invertebrates"
                     android:visible="false" />

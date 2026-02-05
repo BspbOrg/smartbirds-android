@@ -427,7 +427,23 @@ public class MonitoringActivity extends BaseActivity implements MonitoringEntryL
             setZoomFree(item);
             return true;
         }
-        if ((((((((((((((itemId == R.id.action_form_type_birds) || (itemId == R.id.action_form_type_cbm)) || (itemId == R.id.action_form_type_ciconia)) || (itemId == R.id.action_form_type_humid)) || (itemId == R.id.action_form_type_herptile)) || (itemId == R.id.action_form_type_mammal)) || (itemId == R.id.action_form_type_invertebrates)) || (itemId == R.id.action_form_type_plants)) || (itemId == R.id.action_form_type_threats)) || (itemId == R.id.action_form_type_pylons)) || (itemId == R.id.action_form_type_pylons_casualties)) || (itemId == R.id.action_form_type_birds_migrations)) || (itemId == R.id.action_form_type_fish)) || (itemId == R.id.action_form_type_bats)) {
+        if (
+                (itemId == R.id.action_form_type_birds) ||
+                        (itemId == R.id.action_form_type_cbm) ||
+                        (itemId == R.id.action_form_type_ciconia) ||
+                        (itemId == R.id.action_form_type_humid) ||
+                        (itemId == R.id.action_form_type_herptile) ||
+                        (itemId == R.id.action_form_type_mammal) ||
+                        (itemId == R.id.action_form_type_invertebrates) ||
+                        (itemId == R.id.action_form_type_plants) ||
+                        (itemId == R.id.action_form_type_threats) ||
+                        (itemId == R.id.action_form_type_pylons) ||
+                        (itemId == R.id.action_form_type_pylons_casualties) ||
+                        (itemId == R.id.action_form_type_birds_migrations) ||
+                        (itemId == R.id.action_form_type_fish) ||
+                        (itemId == R.id.action_form_type_bats) ||
+                        (itemId == R.id.action_form_type_bears)
+        ) {
             setFormType(item);
             return true;
         }

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import org.bspb.smartbirds.pro.SmartBirdsApplication;
 import org.bspb.smartbirds.pro.ui.exception.ViewValidationException;
+import org.bspb.smartbirds.pro.ui.views.SupportReadOnly;
 import org.bspb.smartbirds.pro.ui.views.SupportRequiredView;
 import org.bspb.smartbirds.pro.ui.views.SupportStorage;
 
@@ -120,7 +121,10 @@ public class FormUtils {
     }
 
     public static void serialize(Map<String, String> storage, String field, View view) {
-        if (!view.isEnabled()) {
+        // Check if view is readonly - readonly views should persist even when disabled
+        boolean isReadOnly = (view instanceof SupportReadOnly) && ((SupportReadOnly) view).isReadOnly();
+
+        if (!view.isEnabled() && !isReadOnly) {
             storage.put(field, "");
             return;
         }

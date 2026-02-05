@@ -46,9 +46,10 @@ import java.util.Map;
 /**
  * Created by groupsky on 14-10-10.
  */
-public class SingleChoiceFormInput extends TextViewFormInput implements SupportStorage {
+public class SingleChoiceFormInput extends TextViewFormInput implements SupportStorage, SupportReadOnly {
 
     private CharSequence key;
+    private boolean mReadOnly = false;
 
     NomenclaturesManager nomenclatures = NomenclaturesManager.Companion.getInstance();
 
@@ -77,10 +78,16 @@ public class SingleChoiceFormInput extends TextViewFormInput implements SupportS
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SingleChoiceFormInput, defStyle, 0);
         try {
             key = a.getText(R.styleable.SingleChoiceFormInput_entriesType);
+            boolean readonly = a.getBoolean(R.styleable.SingleChoiceFormInput_readonly, false);
             SmartArrayAdapter<NomenclatureItem> adapter = new SmartArrayAdapter<>(context,
                     R.layout.item_dialog_single_choice, new ArrayList<NomenclatureItem>());
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             setAdapter(adapter);
+
+            // Apply readonly state if specified in XML
+            if (readonly) {
+                setReadOnly(true);
+            }
         } finally {
             a.recycle();
         }
@@ -209,7 +216,30 @@ public class SingleChoiceFormInput extends TextViewFormInput implements SupportS
     }
 
     @Override
+    public void setReadOnly(boolean readOnly) {
+        mReadOnly = readOnly;
+        if (readOnly) {
+            // Prevent interaction with the view
+            setFocusable(false);
+            setClickable(false);
+        } else {
+            // Restore normal interaction
+            setFocusable(true);
+            setClickable(true);
+        }
+    }
+
+    @Override
+    public boolean isReadOnly() {
+        return mReadOnly;
+    }
+
+    @Override
     public boolean performClick() {
+        // Block clicks when readonly
+        if (mReadOnly) {
+            return false;
+        }
         super.performClick();
         new PopupDialog().show();
         return true;
