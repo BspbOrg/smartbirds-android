@@ -27,11 +27,11 @@ if (uploadKeyAvailable) {
 }
 
 android {
-    compileSdk 34
+    compileSdk 36
 
     defaultConfig {
         applicationId "org.bspb.smartbirds.pro"
-        minSdk 21
+        minSdk 23
         targetSdk 34
         versionCode versionCodeBase
         versionName "${versionNameBase}"
@@ -145,47 +145,47 @@ android {
 }
 
 dependencies {
-    def room_version = "2.7.2"
+    def room_version = "2.8.4"
 
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
-    implementation('org.jetbrains.kotlin:kotlin-stdlib:2.0.20')
+    implementation('org.jetbrains.kotlin:kotlin-stdlib:2.3.10')
 
     // KTX extensions
-    implementation("androidx.core:core-ktx:1.13.1")
-    implementation("androidx.fragment:fragment-ktx:1.8.2")
+    implementation("androidx.core:core-ktx:1.17.0")
+    implementation("androidx.fragment:fragment-ktx:1.8.9")
     implementation("androidx.preference:preference-ktx:1.2.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.4")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.10.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.10.0")
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation("com.google.android.gms:play-services-maps:19.0.0")
+    implementation("com.google.android.gms:play-services-maps:20.0.0")
     implementation("com.google.android.gms:play-services-location:21.3.0")
 
     // TODO: migrate to v3.x
     implementation("de.greenrobot:eventbus:2.4.1")
 
     // Crashlytics Kit
-    implementation("com.google.firebase:firebase-crashlytics:19.0.3")
+    implementation("com.google.firebase:firebase-crashlytics:20.0.4")
 
-    implementation("com.google.firebase:firebase-analytics:22.1.0")
+    implementation("com.google.firebase:firebase-analytics:23.0.0")
 
     // TODO: migrate to https://commons.apache.org/proper/commons-csv/
     implementation("com.googlecode.jcsv:jcsv:1.4.0")
-    implementation('com.google.maps.android:android-maps-utils:3.8.2')
+    implementation('com.google.maps.android:android-maps-utils:4.0.0')
 
     implementation('org.osmdroid:osmdroid-android:6.1.20')
     implementation("com.github.MKergall:osmbonuspack:6.9.0")
-    implementation("com.google.android.material:material:1.12.0")
+    implementation("com.google.android.material:material:1.13.0")
     implementation("androidx.legacy:legacy-support-v13:1.0.0")
 
     // http://square.github.io/retrofit/
-    implementation('com.squareup.retrofit2:retrofit:2.11.0')
-    implementation('com.squareup.retrofit2:converter-gson:2.11.0')
-    implementation('com.squareup.okhttp3:logging-interceptor:4.12.0')
-    implementation("com.squareup.okhttp3:okhttp-urlconnection:4.12.0")
+    implementation('com.squareup.retrofit2:retrofit:3.0.0')
+    implementation('com.squareup.retrofit2:converter-gson:3.0.0')
+    implementation('com.squareup.okhttp3:logging-interceptor:5.3.2')
+    implementation("com.squareup.okhttp3:okhttp-urlconnection:5.3.2")
 
-    implementation("androidx.lifecycle:lifecycle-common-java8:2.8.4")
+    implementation("androidx.lifecycle:lifecycle-common-java8:2.10.0")
 
     // Room
     implementation("androidx.room:room-runtime:$room_version")
@@ -193,21 +193,21 @@ dependencies {
     implementation("androidx.room:room-ktx:$room_version")
 
     // Coroutines
-    implementation('org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1')
+    implementation('org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2')
 
     testImplementation("junit:junit:4.13.2")
 
     // Instrumentation testing
 
-    androidTestImplementation("androidx.test:runner:1.6.2")
-    androidTestUtil("androidx.test:orchestrator:1.5.0")
-    androidTestImplementation("androidx.test:rules:1.6.1")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test:runner:1.7.0")
+    androidTestUtil("androidx.test:orchestrator:1.6.1")
+    androidTestImplementation("androidx.test:rules:1.7.0")
+    androidTestImplementation("androidx.test.ext:junit:1.3.0")
     // Optional -- UI testing with Espresso
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.6.1")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.7.0")
     // mock server for backend
-    androidTestImplementation('com.squareup.okhttp3:mockwebserver:4.12.0')
+    androidTestImplementation('com.squareup.okhttp3:mockwebserver:5.3.2')
     // Optional -- Hamcrest library
     androidTestImplementation("org.hamcrest:hamcrest:3.0")
     androidTestImplementation("org.hamcrest:hamcrest-library:3.0")
