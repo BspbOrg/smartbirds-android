@@ -25,6 +25,11 @@ public class StartMonitoringActivity extends BaseActivity {
     CurrentMonitoringCommonFormFragment formFragment;
 
     @Override
+    protected int getInsetContainerId() {
+        return R.id.container;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_monitoring);

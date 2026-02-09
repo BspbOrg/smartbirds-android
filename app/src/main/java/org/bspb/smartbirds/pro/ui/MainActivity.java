@@ -2,11 +2,6 @@ package org.bspb.smartbirds.pro.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-
-import androidx.activity.EdgeToEdge;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import org.bspb.smartbirds.pro.BuildConfig;
 import org.bspb.smartbirds.pro.R;
@@ -29,10 +24,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-
         setContentView(R.layout.activity_main);
-        setupWindowInsets();
 
         prefs = new UserPrefs(this);
         globalPrefs = new SmartBirdsPrefs(this);
@@ -53,17 +45,9 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    /**
-     * Setup window insets to handle edge-to-edge display.
-     * Applies system bar insets as padding to the container.
-     */
-    private void setupWindowInsets() {
-        View container = findViewById(R.id.container);
-        ViewCompat.setOnApplyWindowInsetsListener(container, (view, windowInsets) -> {
-            androidx.core.graphics.Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
-            view.setPadding(insets.left, insets.top, insets.right, insets.bottom);
-            return WindowInsetsCompat.CONSUMED;
-        });
+    @Override
+    protected int getInsetContainerId() {
+        return R.id.container;
     }
 
     void createFragment() {

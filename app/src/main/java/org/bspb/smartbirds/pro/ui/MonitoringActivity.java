@@ -92,6 +92,11 @@ public class MonitoringActivity extends BaseActivity implements MonitoringEntryL
 
     private static final int REQUEST_FINISH_MONITORING = 1002;
 
+    @Override
+    protected int getInsetContainerId() {
+        return R.id.monitoring_root;
+    }
+
     @NonNull
     MapProvider.ProviderType providerType = MapProvider.ProviderType.GOOGLE;
     @NonNull

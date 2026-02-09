@@ -31,6 +31,11 @@ public class MonitoringListActivity extends BaseActivity implements MonitoringLi
     MonitoringListFragment listFragment;
 
     @Override
+    protected int getInsetContainerId() {
+        return R.id.monitoring_list_container;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monitoring_list);

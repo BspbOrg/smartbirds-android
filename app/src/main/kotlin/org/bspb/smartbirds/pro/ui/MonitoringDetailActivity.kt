@@ -34,6 +34,8 @@ open class MonitoringDetailActivity : BaseActivity(), MonitoringEntryListFragmen
     private var monitoring: Monitoring? = null
     private val monitoringManager = MonitoringManager.getInstance()
 
+    override fun getInsetContainerId(): Int = R.id.monitoring_detail_container
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_monitoring_detail)
