@@ -20,8 +20,6 @@ open class SplashScreenActivity : BaseActivity(), Runnable {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Enable edge-to-edge display
         enableEdgeToEdge()
 
         supportRequestWindowFeature(1)
