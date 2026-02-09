@@ -32,7 +32,7 @@ android {
     defaultConfig {
         applicationId "org.bspb.smartbirds.pro"
         minSdk 23
-        targetSdk 34
+        targetSdk 35
         versionCode versionCodeBase
         versionName "${versionNameBase}"
 
@@ -153,6 +153,7 @@ dependencies {
 
     // KTX extensions
     implementation("androidx.core:core-ktx:1.17.0")
+    implementation("androidx.activity:activity-ktx:1.9.3")
     implementation("androidx.fragment:fragment-ktx:1.8.9")
     implementation("androidx.preference:preference-ktx:1.2.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.10.0")
