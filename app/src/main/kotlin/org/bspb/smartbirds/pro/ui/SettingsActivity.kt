@@ -2,11 +2,13 @@ package org.bspb.smartbirds.pro.ui
 
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import org.bspb.smartbirds.pro.R
 import org.bspb.smartbirds.pro.ui.fragment.SettingsFragment
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : BaseActivity() {
+
+    override fun getInsetContainerId(): Int = R.id.fragment_container
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_single_fragment)
