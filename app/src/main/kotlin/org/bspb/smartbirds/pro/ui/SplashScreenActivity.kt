@@ -4,8 +4,10 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
-import android.view.WindowManager
+import androidx.activity.enableEdgeToEdge
 import androidx.core.app.TaskStackBuilder
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import org.bspb.smartbirds.pro.R
 import org.bspb.smartbirds.pro.prefs.SmartBirdsPrefs
 import org.bspb.smartbirds.pro.service.DataService
@@ -18,17 +20,23 @@ open class SplashScreenActivity : BaseActivity(), Runnable {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Enable edge-to-edge display
+        enableEdgeToEdge()
+
         supportRequestWindowFeature(1)
-
         setContentView(R.layout.activity_splash_screen)
-
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
 
         prefs = SmartBirdsPrefs(this)
         content = findViewById(android.R.id.content)
+
+        // Handle window insets to prevent overlap with system bars
+        ViewCompat.setOnApplyWindowInsetsListener(content) { view, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            // Apply insets as padding to the content view
+            view.setPadding(insets.left, insets.top, insets.right, insets.bottom)
+            WindowInsetsCompat.CONSUMED
+        }
     }
 
     override fun onResume() {
