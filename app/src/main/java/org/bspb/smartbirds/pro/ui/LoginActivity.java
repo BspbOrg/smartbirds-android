@@ -12,8 +12,12 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.activity.EdgeToEdge;
+import androidx.activity.SystemBarStyle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import org.bspb.smartbirds.pro.R;
 import org.bspb.smartbirds.pro.SmartBirdsApplication;
@@ -50,9 +54,42 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(
+                this,
+                SystemBarStyle.light(
+                        android.graphics.Color.TRANSPARENT,
+                        android.graphics.Color.TRANSPARENT
+                )
+        );
+
         prefs = new UserPrefs(this);
         setContentView(R.layout.activity_login);
+        setupWindowInsets();
         initViews();
+    }
+
+    /**
+     * Setup window insets to handle edge-to-edge display.
+     * Adds system bar insets to existing padding to prevent content overlap.
+     */
+    private void setupWindowInsets() {
+        View loginRoot = findViewById(R.id.login_root);
+        ViewCompat.setOnApplyWindowInsetsListener(loginRoot, (view, windowInsets) -> {
+            androidx.core.graphics.Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+            // Add system bar insets to existing padding
+            int existingPaddingLeft = getResources().getDimensionPixelSize(R.dimen.activity_horizontal_margin);
+            int existingPaddingTop = getResources().getDimensionPixelSize(R.dimen.activity_vertical_margin);
+            int existingPaddingRight = getResources().getDimensionPixelSize(R.dimen.activity_horizontal_margin);
+            int existingPaddingBottom = getResources().getDimensionPixelSize(R.dimen.activity_vertical_margin);
+
+            view.setPadding(
+                    existingPaddingLeft + insets.left,
+                    existingPaddingTop + insets.top,
+                    existingPaddingRight + insets.right,
+                    existingPaddingBottom + insets.bottom
+            );
+            return WindowInsetsCompat.CONSUMED;
+        });
     }
 
     private void initViews() {
@@ -261,4 +298,3 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 }
-

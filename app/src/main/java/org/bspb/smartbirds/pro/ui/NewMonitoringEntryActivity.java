@@ -42,6 +42,11 @@ public class NewMonitoringEntryActivity extends BaseActivity implements ServiceC
 
     EEventBus eventBus = EEventBus.getInstance();
 
+    @Override
+    protected int getInsetContainerId() {
+        return R.id.container;
+    }
+
     public static Intent newIntent(Context context, EntryType entryType) {
         return new Intent(context, NewMonitoringEntryActivity.class)
                 .putExtra(EXTRA_TYPE, entryType);

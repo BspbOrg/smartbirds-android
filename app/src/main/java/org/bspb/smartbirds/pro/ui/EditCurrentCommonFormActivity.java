@@ -23,6 +23,11 @@ public class EditCurrentCommonFormActivity extends BaseActivity {
     CurrentMonitoringCommonFormFragment formFragment;
     boolean isFinishing = false;
 
+    @Override
+    protected int getInsetContainerId() {
+        return R.id.container;
+    }
+
     public static Intent intent(Context context) {
         return intent(context, false);
     }

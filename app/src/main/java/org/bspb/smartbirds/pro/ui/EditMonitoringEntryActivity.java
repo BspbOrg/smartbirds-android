@@ -32,6 +32,11 @@ public class EditMonitoringEntryActivity extends BaseActivity {
 
     EEventBus eventBus = EEventBus.getInstance();
 
+    @Override
+    protected int getInsetContainerId() {
+        return R.id.container;
+    }
+
     public static Intent newIntent(Context context, long entryId, EntryType entryType) {
         Intent intent = new Intent(context, EditMonitoringEntryActivity.class);
         intent.putExtra(EXTRA_ENTRY_ID, entryId);

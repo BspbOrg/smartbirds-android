@@ -45,6 +45,11 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    @Override
+    protected int getInsetContainerId() {
+        return R.id.container;
+    }
+
     void createFragment() {
         if (getSupportFragmentManager().findFragmentById(R.id.container) == null)
             getSupportFragmentManager().beginTransaction()

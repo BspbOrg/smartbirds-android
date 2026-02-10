@@ -25,6 +25,8 @@ open class ViewMonitoringEntryActivity : BaseActivity() {
 
     protected var fragment: Fragment? = null
 
+    override fun getInsetContainerId(): Int = R.id.container
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form)

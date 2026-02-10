@@ -9,6 +9,10 @@ import org.bspb.smartbirds.pro.ui.fragment.StatsFragment;
 
 public class StatsActivity extends BaseActivity {
 
+    @Override
+    protected int getInsetContainerId() {
+        return R.id.container;
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

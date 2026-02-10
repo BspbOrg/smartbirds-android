@@ -4,12 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import org.bspb.smartbirds.pro.R
 import org.bspb.smartbirds.pro.ui.fragment.MonitoringReportFragment
 
-class MonitoringReportActivity : AppCompatActivity() {
+class MonitoringReportActivity : BaseActivity() {
+
+    override fun getInsetContainerId(): Int = R.id.fragment_container
 
     companion object {
         const val EXTRA_MONITORING_CODE = "monitoringCode"

@@ -27,6 +27,8 @@ open class BrowseMonitoringCommonFormActivity : BaseActivity() {
 
     protected lateinit var monitoringCode: String
 
+    override fun getInsetContainerId(): Int = R.id.container
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start_monitoring)
