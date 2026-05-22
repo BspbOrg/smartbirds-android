@@ -59,6 +59,7 @@
         <item>CICONIA</item>
         <item>HERPTILE</item>
         <item>MAMMAL</item>
+        <item>BEARS</item>
         <item>INVERTEBRATES</item>
         <item>PLANTS</item>
         <item>THREATS</item>
@@ -67,7 +68,7 @@
         <item>BIRDS_MIGRATIONS</item>
         <item>FISH</item>
         <item>BATS</item>
-        <item>BEARS</item>
+
     </array>
 
     <array name="attach_image_options">
