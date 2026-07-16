@@ -1,8 +1,16 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+// Override AGP 9's built-in Kotlin plugin to match the Kotlin libs KSP pulls in. The classpath
+// below and the KSP plugin must share the same version, so both read kotlinVersion (gradle.properties).
+buildscript {
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+    }
+}
+
 plugins {
     id 'com.android.application' version '9.3.0' apply false
 
     id 'com.google.gms.google-services' version '4.5.0' apply false
-    id 'com.google.firebase.crashlytics' version '3.0.2' apply false
-    id 'com.google.devtools.ksp' version '2.3.10' apply false
+    id 'com.google.firebase.crashlytics' version '3.0.7' apply false
+    id 'com.google.devtools.ksp' version "${kotlinVersion}" apply false
 }

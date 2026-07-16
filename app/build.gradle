@@ -25,7 +25,7 @@ if (uploadKeyAvailable) {
 }
 
 android {
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "org.bspb.smartbirds.pro"
@@ -147,44 +147,42 @@ dependencies {
 
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
-    implementation('org.jetbrains.kotlin:kotlin-stdlib:2.3.10')
-
     // KTX extensions
-    implementation("androidx.core:core-ktx:1.17.0")
-    implementation("androidx.activity:activity-ktx:1.9.3")
+    implementation("androidx.core:core-ktx:1.19.0")
+    implementation("androidx.activity:activity-ktx:1.13.0")
     implementation("androidx.fragment:fragment-ktx:1.8.9")
     implementation("androidx.preference:preference-ktx:1.2.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.10.0")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.10.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.11.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.11.0")
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation("com.google.android.gms:play-services-maps:20.0.0")
-    implementation("com.google.android.gms:play-services-location:21.3.0")
+    implementation("com.google.android.gms:play-services-location:21.4.0")
 
     // TODO: migrate to v3.x
     implementation("de.greenrobot:eventbus:2.4.1")
 
     // Crashlytics Kit
-    implementation("com.google.firebase:firebase-crashlytics:20.0.4")
+    implementation("com.google.firebase:firebase-crashlytics:20.1.0")
 
-    implementation("com.google.firebase:firebase-analytics:23.0.0")
+    implementation("com.google.firebase:firebase-analytics:23.2.0")
 
     // TODO: migrate to https://commons.apache.org/proper/commons-csv/
     implementation("com.googlecode.jcsv:jcsv:1.4.0")
-    implementation('com.google.maps.android:android-maps-utils:4.0.0')
+    implementation('com.google.maps.android:android-maps-utils:4.5.2')
 
     implementation('org.osmdroid:osmdroid-android:6.1.20')
     implementation("com.github.MKergall:osmbonuspack:6.9.0")
-    implementation("com.google.android.material:material:1.13.0")
+    implementation("com.google.android.material:material:1.14.0")
     implementation("androidx.legacy:legacy-support-v13:1.0.0")
 
     // http://square.github.io/retrofit/
     implementation('com.squareup.retrofit2:retrofit:3.0.0')
     implementation('com.squareup.retrofit2:converter-gson:3.0.0')
-    implementation('com.squareup.okhttp3:logging-interceptor:5.3.2')
-    implementation("com.squareup.okhttp3:okhttp-urlconnection:5.3.2")
+    implementation('com.squareup.okhttp3:logging-interceptor:5.4.0')
+    implementation("com.squareup.okhttp3:okhttp-urlconnection:5.4.0")
 
-    implementation("androidx.lifecycle:lifecycle-common-java8:2.10.0")
+    implementation("androidx.lifecycle:lifecycle-common-java8:2.11.0")
 
     // Room
     implementation("androidx.room:room-runtime:$room_version")
@@ -192,7 +190,7 @@ dependencies {
     implementation("androidx.room:room-ktx:$room_version")
 
     // Coroutines
-    implementation('org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2')
+    implementation('org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0')
 
     testImplementation("junit:junit:4.13.2")
 
@@ -206,11 +204,11 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
     androidTestImplementation("androidx.test.espresso:espresso-contrib:3.7.0")
     // mock server for backend
-    androidTestImplementation('com.squareup.okhttp3:mockwebserver:5.3.2')
+    androidTestImplementation('com.squareup.okhttp3:mockwebserver:5.4.0')
     // Optional -- Hamcrest library
     androidTestImplementation("org.hamcrest:hamcrest:3.0")
     androidTestImplementation("org.hamcrest:hamcrest-library:3.0")
     androidTestImplementation("junit:junit:4.13.2")
 
-    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.3.0")
+    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.4.0")
 }
