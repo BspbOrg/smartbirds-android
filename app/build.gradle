@@ -25,20 +25,20 @@ if (uploadKeyAvailable) {
 }
 
 android {
-    compileSdk 36
+    compileSdk = 36
 
     defaultConfig {
-        applicationId "org.bspb.smartbirds.pro"
-        minSdk 23
-        targetSdk 35
-        versionCode versionCodeBase
-        versionName "${versionNameBase}"
+        applicationId = "org.bspb.smartbirds.pro"
+        minSdk = 23
+        targetSdk = 35
+        versionCode = versionCodeBase
+        versionName = "${versionNameBase}"
 
         def buildTime = new GregorianCalendar().format("MM-dd-yyyy' 'HH:mm:ss Z")
         buildConfigField "String", "BUILD_TIME", "\"${buildTime}\""
 
         // default runner for instrumentation tests (androidTest)
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         // The following argument makes the Android Test Orchestrator run its
         // "pm clear" command after each test invocation. This command ensures
         // that the app"s state is completely cleared between tests.
@@ -69,19 +69,19 @@ android {
         ext.betaDistributionGroupAliases = "BSPB"
 
         debug {
-            versionNameSuffix "-DEBUG"
+            versionNameSuffix = "-DEBUG"
             buildConfigField "String", "GIT_SHA", "\"DEBUG\""
             buildConfigField "String", "BACKEND_BASE_URL", "\"https://staging.smartbirds.org/api/\""
             firebaseCrashlytics {
-                mappingFileUploadEnabled false
+                mappingFileUploadEnabled = false
             }
         }
 
         release {
-            minifyEnabled false
+            minifyEnabled = false
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             if (uploadKeyAvailable) {
-                signingConfig signingConfigs.release
+                signingConfig = signingConfigs.release
             }
 
             def gitSha = "git rev-parse --short HEAD".execute([], project.rootDir).text.trim()
@@ -90,11 +90,11 @@ android {
         }
 
         beta {
-            versionNameSuffix "-BETA"
-            minifyEnabled false
+            versionNameSuffix = "-BETA"
+            minifyEnabled = false
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             if (betaKeyAvailable) {
-                signingConfig signingConfigs.beta
+                signingConfig = signingConfigs.beta
             }
 
             def gitSha = "git rev-parse --short HEAD".execute([], project.rootDir).text.trim()
@@ -104,8 +104,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     sourceSets {
@@ -116,18 +116,18 @@ android {
 
     buildFeatures {
         dataBinding = true
-        buildConfig true
+        buildConfig = true
     }
 
     testOptions {
         animationsDisabled = true
         // enable android orchestrator for isolated tests
-        execution "ANDROIDX_TEST_ORCHESTRATOR"
+        execution = "ANDROIDX_TEST_ORCHESTRATOR"
     }
     lint {
-        abortOnError true
+        abortOnError = true
     }
-    namespace "org.bspb.smartbirds.pro"
+    namespace = "org.bspb.smartbirds.pro"
 }
 
 androidComponents {
