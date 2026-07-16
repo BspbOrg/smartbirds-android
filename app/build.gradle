@@ -2,8 +2,6 @@ plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
-    id("kotlin-android")
-    id("kotlin-kapt")
     id("com.google.devtools.ksp")
 }
 
@@ -103,12 +101,6 @@ android {
             buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
             buildConfigField "String", "BACKEND_BASE_URL", "\"https://smartbirds.org/api/\""
         }
-
-        applicationVariants.all { variant ->
-            variant.outputs.each { output ->
-                output.outputFileName = "smartbirdspro-${variant.versionName}-${versionCodeBase}.apk"
-            }
-        }
     }
 
     compileOptions {
@@ -116,16 +108,10 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-
     sourceSets {
-        main.java.srcDirs += "src/main/kotlin"
-    }
-
-    kapt {
-        correctErrorTypes = true
+        named("main") {
+            kotlin.directories.add("src/main/kotlin")
+        }
     }
 
     buildFeatures {
@@ -142,6 +128,18 @@ android {
         abortOnError true
     }
     namespace "org.bspb.smartbirds.pro"
+}
+
+androidComponents {
+    onVariants(selector().all()) { variant ->
+        def suffix = variant.buildType == "debug" ? "-DEBUG"
+                : variant.buildType == "beta" ? "-BETA" : ""
+        variant.outputs.each { output ->
+            if (output instanceof com.android.build.api.variant.impl.VariantOutputImpl) {
+                output.outputFileName.set("smartbirdspro-${versionNameBase}${suffix}-${versionCodeBase}.apk")
+            }
+        }
+    }
 }
 
 dependencies {
