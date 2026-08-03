@@ -14,84 +14,67 @@ class UserPrefs(context: Context) {
         const val KEY_LAST_NAME = "lastName"
         const val KEY_EMAIL = "email"
         const val KEY_BG_ATLAS_CELLS = "bgAtlasCells"
+
+        private const val SECURE_FILE = "UserPrefsSecure"
+        private const val SECURE_KEY_ALIAS = "sb_user_prefs_key"
+        private const val COOKIE_FILE = "UserPrefsCookies"
+        private const val COOKIE_KEY_ALIAS = "sb_cookie_store_key"
+
+        // Holds only the migration done-flag; never cleared on logout, so the
+        // one-time migration is not re-run after every logout.
+        private const val MIGRATION_FILE = "UserPrefsMigration"
     }
 
-    private val prefs = context.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+    private val store: SecureStore =
+        EncryptedSecureStore(context, SECURE_FILE, SECURE_KEY_ALIAS)
+
+    init {
+        val cookieStore: SecureStore =
+            EncryptedSecureStore(context, COOKIE_FILE, COOKIE_KEY_ALIAS)
+        val flagStore: SecureStore = PlainPrefsStore(context, MIGRATION_FILE)
+        LegacyPrefsMigration(store, cookieStore, flagStore)
+            .migrateIfNeeded(SharedPrefsLegacySource(context))
+    }
 
     fun clear() {
-        prefs.edit().clear().apply()
+        store.clear()
     }
 
-    fun isAuthenticated(): Boolean {
-        return prefs.getBoolean(KEY_IS_AUTHENTICATED, false)
-    }
+    fun isAuthenticated(): Boolean = store.getString(KEY_IS_AUTHENTICATED) == "true"
 
     fun setAuthenticated(isAuthenticated: Boolean) {
-        prefs.edit().putBoolean(KEY_IS_AUTHENTICATED, isAuthenticated).apply()
+        store.putString(KEY_IS_AUTHENTICATED, isAuthenticated.toString())
     }
 
-    fun getAuthToken(): String {
-        return prefs.getString(KEY_AUTH_TOKEN, "") ?: ""
-    }
+    fun getAuthToken(): String = store.getString(KEY_AUTH_TOKEN, "") ?: ""
 
-    fun setAuthToken(authToken: String?) {
-        prefs.edit().putString(KEY_AUTH_TOKEN, authToken).apply()
-    }
+    fun setAuthToken(authToken: String?) = store.putString(KEY_AUTH_TOKEN, authToken)
 
-    fun getUsername(): String {
-        return prefs.getString(KEY_USERNAME, "") ?: ""
-    }
+    fun getUsername(): String = store.getString(KEY_USERNAME, "") ?: ""
 
-    fun setUsername(username: String?) {
-        prefs.edit().putString(KEY_USERNAME, username).apply()
-    }
+    fun setUsername(username: String?) = store.putString(KEY_USERNAME, username)
 
-    fun getPassword(): String {
-        return prefs.getString(KEY_PASSWORD, "") ?: ""
-    }
+    fun getPassword(): String = store.getString(KEY_PASSWORD, "") ?: ""
 
-    fun setPassword(password: String?) {
-        prefs.edit().putString(KEY_PASSWORD, password).apply()
-    }
+    fun setPassword(password: String?) = store.putString(KEY_PASSWORD, password)
 
-    fun getUserId(): String {
-        return prefs.getString(KEY_USER_ID, "") ?: ""
-    }
+    fun getUserId(): String = store.getString(KEY_USER_ID, "") ?: ""
 
-    fun setUserId(userId: String?) {
-        prefs.edit().putString(KEY_USER_ID, userId).apply()
-    }
+    fun setUserId(userId: String?) = store.putString(KEY_USER_ID, userId)
 
-    fun getFirstName(): String {
-        return prefs.getString(KEY_FIRST_NAME, "") ?: ""
-    }
+    fun getFirstName(): String = store.getString(KEY_FIRST_NAME, "") ?: ""
 
-    fun setFirstName(firstName: String?) {
-        prefs.edit().putString(KEY_FIRST_NAME, firstName).apply()
-    }
+    fun setFirstName(firstName: String?) = store.putString(KEY_FIRST_NAME, firstName)
 
-    fun getLastName(): String {
-        return prefs.getString(KEY_LAST_NAME, "") ?: ""
-    }
+    fun getLastName(): String = store.getString(KEY_LAST_NAME, "") ?: ""
 
-    fun setLastName(lastName: String?) {
-        prefs.edit().putString(KEY_LAST_NAME, lastName).apply()
-    }
+    fun setLastName(lastName: String?) = store.putString(KEY_LAST_NAME, lastName)
 
-    fun getEmail(): String {
-        return prefs.getString(KEY_EMAIL, "") ?: ""
-    }
+    fun getEmail(): String = store.getString(KEY_EMAIL, "") ?: ""
 
-    fun setEmail(email: String?) {
-        prefs.edit().putString(KEY_EMAIL, email).apply()
-    }
+    fun setEmail(email: String?) = store.putString(KEY_EMAIL, email)
 
-    fun getBgAtlasCells(): String {
-        return prefs.getString(KEY_BG_ATLAS_CELLS, "") ?: ""
-    }
+    fun getBgAtlasCells(): String = store.getString(KEY_BG_ATLAS_CELLS, "") ?: ""
 
-    fun setBgAtlasCells(bgAtlasCells: String?) {
-        prefs.edit().putString(KEY_BG_ATLAS_CELLS, bgAtlasCells).apply()
-    }
-
+    fun setBgAtlasCells(bgAtlasCells: String?) = store.putString(KEY_BG_ATLAS_CELLS, bgAtlasCells)
 }

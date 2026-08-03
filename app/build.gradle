@@ -78,7 +78,7 @@ android {
         }
 
         release {
-            minifyEnabled = false
+            minifyEnabled = true
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             if (uploadKeyAvailable) {
                 signingConfig = signingConfigs.release
@@ -91,7 +91,7 @@ android {
 
         beta {
             versionNameSuffix = "-BETA"
-            minifyEnabled = false
+            minifyEnabled = true
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             if (betaKeyAvailable) {
                 signingConfig = signingConfigs.beta
@@ -123,6 +123,12 @@ android {
         animationsDisabled = true
         // enable android orchestrator for isolated tests
         execution = "ANDROIDX_TEST_ORCHESTRATOR"
+        // print per-test results to the console for JVM unit tests
+        unitTests.all {
+            testLogging {
+                events "passed", "skipped", "failed"
+            }
+        }
     }
     lint {
         abortOnError = true

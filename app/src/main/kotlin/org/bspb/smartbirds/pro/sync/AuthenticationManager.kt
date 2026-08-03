@@ -43,11 +43,9 @@ open class AuthenticationManager(private var context: Context) {
 
     open fun login(email: String?, password: String?, gdprConsent: Boolean?) {
         scope.sbLaunch(Dispatchers.IO) {
-            Log.d(TAG, String.format("login: %s %s", email, password))
             bus.postSticky(LoginStateEvent(true))
             try {
                 val result = doLogin(email, password, gdprConsent)
-                Log.d(TAG, String.format("login: %s %s => %s", email, password, result))
                 bus.postSticky(result)
                 bus.postSticky(UserDataEvent(result.user))
             } finally {

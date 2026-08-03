@@ -35,7 +35,6 @@ class TrackingService : Service() {
     private val locationCallback = object : LocationCallback() {
         override fun onLocationResult(locationResult: LocationResult) {
             locationResult.locations.forEach {
-                Log.v(TAG, "Location changed: $it")
                 if (tracking) {
                     eventBus.postSticky(it)
                 }
