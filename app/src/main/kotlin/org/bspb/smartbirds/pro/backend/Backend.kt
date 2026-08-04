@@ -44,7 +44,7 @@ class Backend private constructor() {
 
     init {
         val logging = HttpLoggingInterceptor()
-        logging.setLevel(if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.BASIC)
+        logging.setLevel(if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE)
         addNetworkInterceptor(logging)
     }
 

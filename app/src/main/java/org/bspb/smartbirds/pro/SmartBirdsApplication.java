@@ -9,6 +9,7 @@ import org.bspb.smartbirds.pro.backend.AddLanguageInterceptor;
 import org.bspb.smartbirds.pro.backend.AuthenticationInterceptor;
 import org.bspb.smartbirds.pro.backend.Backend;
 import org.bspb.smartbirds.pro.backend.ReceivedCookiesInterceptor;
+import org.bspb.smartbirds.pro.backend.SecureCookieStore;
 import org.bspb.smartbirds.pro.beans.EntriesToMapMarkersConverter;
 import org.bspb.smartbirds.pro.db.SmartBirdsDatabase;
 import org.bspb.smartbirds.pro.events.CancelMonitoringEvent;
@@ -50,11 +51,12 @@ public class SmartBirdsApplication extends Application {
         SmartBirdsDatabase.Companion.init(this);
         NomenclaturesManager.Companion.init(this);
         MonitoringManager.Companion.init(this);
+        SecureCookieStore.INSTANCE.init(this);
         AuthenticationInterceptor.Companion.init(this);
         EntriesToMapMarkersConverter.Companion.init(this);
 
-        backend.addInterceptor(new AddCookiesInterceptor(this));
-        backend.addInterceptor(new ReceivedCookiesInterceptor(this));
+        backend.addInterceptor(new AddCookiesInterceptor());
+        backend.addInterceptor(new ReceivedCookiesInterceptor());
         backend.addInterceptor(AuthenticationInterceptor.Companion.getInstance());
         backend.addInterceptor(new AddLanguageInterceptor());
 

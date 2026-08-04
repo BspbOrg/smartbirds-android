@@ -61,6 +61,7 @@ class AuthenticationInterceptor private constructor() : Interceptor {
         authorization = null
         prefs.clear()
         prefs.setAuthenticated(false)
+        SecureCookieStore.clear()
     }
 
     fun setAuthorization(authorization: String?, username: String?, password: String?) {
@@ -69,7 +70,6 @@ class AuthenticationInterceptor private constructor() : Interceptor {
         prefs.setAuthenticated(!TextUtils.isEmpty(authorization))
         prefs.setUsername(username)
         prefs.setPassword(password)
-        Log.i(TAG, String.format("Authorization: %s", authorization))
     }
 
     @Synchronized
@@ -116,7 +116,6 @@ class AuthenticationInterceptor private constructor() : Interceptor {
             }
             val newRequest: Request =
                 chain.request().newBuilder().addHeader("x-sb-csrf-token", auth!!).build()
-            Log.d(TAG, String.format("Authorization: %s", auth))
             response?.close()
             response = chain.proceed(newRequest)
             if (!response.isSuccessful && response.code == 401) {
