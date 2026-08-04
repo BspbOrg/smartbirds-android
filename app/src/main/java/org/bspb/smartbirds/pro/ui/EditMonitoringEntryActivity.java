@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -47,6 +48,17 @@ public class EditMonitoringEntryActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Register back handler
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if (!confirmCancel()) {
+                    finish();
+                }
+            }
+        });
+
         startService(DataService.Companion.intent(this));
         setContentView(R.layout.activity_form);
 
@@ -86,14 +98,10 @@ public class EditMonitoringEntryActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
         if (itemId == android.R.id.home) {
-            return confirmCancel();
+            getOnBackPressedDispatcher().onBackPressed();
+            return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (!confirmCancel()) super.onBackPressed();
     }
 
     private boolean confirmCancel() {
