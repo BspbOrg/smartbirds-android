@@ -30,7 +30,7 @@ android {
     defaultConfig {
         applicationId = "org.bspb.smartbirds.pro"
         minSdk = 23
-        targetSdk = 35
+        targetSdk = 36
         versionCode = versionCodeBase
         versionName = "${versionNameBase}"
 
