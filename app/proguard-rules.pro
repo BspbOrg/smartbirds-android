@@ -19,6 +19,10 @@
 }
 -keep class org.bspb.smartbirds.pro.events.** { *; }
 
+# --- Form Converters/Uploaders (instantiated reflectively via EntryType.getConverter/getUploader) ---
+-keep class org.bspb.smartbirds.pro.forms.convert.** { *; }
+-keep class org.bspb.smartbirds.pro.forms.upload.** { *; }
+
 # --- Gson (reflective field access; shrinking must not drop model members) ---
 -keepattributes Signature, *Annotation*, EnclosingMethod, InnerClasses
 -keep class org.bspb.smartbirds.pro.backend.dto.** { *; }
