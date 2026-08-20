@@ -185,8 +185,8 @@ dependencies {
     // http://square.github.io/retrofit/
     implementation('com.squareup.retrofit2:retrofit:3.0.0')
     implementation('com.squareup.retrofit2:converter-gson:3.0.0')
-    implementation('com.squareup.okhttp3:logging-interceptor:5.4.0')
-    implementation("com.squareup.okhttp3:okhttp-urlconnection:5.4.0")
+    implementation('com.squareup.okhttp3:logging-interceptor:5.5.0')
+    implementation("com.squareup.okhttp3:okhttp-urlconnection:5.5.0")
 
     implementation("androidx.lifecycle:lifecycle-common-java8:2.11.0")
 
@@ -210,7 +210,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
     androidTestImplementation("androidx.test.espresso:espresso-contrib:3.7.0")
     // mock server for backend
-    androidTestImplementation('com.squareup.okhttp3:mockwebserver:5.4.0')
+    androidTestImplementation('com.squareup.okhttp3:mockwebserver:5.5.0')
     // Optional -- Hamcrest library
     androidTestImplementation("org.hamcrest:hamcrest:3.0")
     androidTestImplementation("org.hamcrest:hamcrest-library:3.0")
